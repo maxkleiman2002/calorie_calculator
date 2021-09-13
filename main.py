@@ -390,7 +390,7 @@ def food_calorie_calculator():
         try:
             cursor = connection.cursor()
             print("Подключен к SQLite")
-            product_name['activebackground'] = '#DBEFF9'
+
             sql_select_query = """SELECT * FROM product WHERE name == ?"""
             cursor.execute(sql_select_query, (product_name,))
             print("Продукт - ", product_name)
@@ -417,12 +417,12 @@ def food_calorie_calculator():
                     Lab_info[product].pack(pady = 20)
 
 
-                    count1 += row[2]
-                    count2 += row[3]
-                    count3 += row[4]
-                    count4 += row[5]
-            lab_sum = Label(tab_result,text=f" Итого на 100 грамм ------ Калорийность - {count1} /  Белки - {count2:.2f}  / Жиры -  {count3:.2f}  / Углеводы - {count4:.2f}",bg="#DBEFF9", fg="#373B3C", font=("Roboto", 20))
-            lab_sum.place(x = 300, y = 800)
+                    #count1 += row[2]
+                    #count2 += row[3]
+                    #count3 += row[4]
+                    #count4 += row[5]
+            #lab_sum = Label(tab_result,text=f" Итого на 100 грамм ------ Калорийность - {count1} /  Белки - {count2:.2f}  / Жиры -  {count3:.2f}  / Углеводы - {count4:.2f}",bg="#DBEFF9", fg="#373B3C", font=("Roboto", 20))
+            #lab_sum.pack(pady=30)
 
 
 
@@ -431,6 +431,14 @@ def food_calorie_calculator():
 
         except sqlite3.Error as error:
             print("Ошибка при работе с SQLite", error)
+
+
+
+
+
+
+
+
 
 
 
